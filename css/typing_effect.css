@@ -1,0 +1,24 @@
+.typed_text
+{
+    font-weight:normal;
+    color:#FF8130;
+}
+
+.typing_cursor
+{
+    display:inline-block;
+    width:3px;
+    background-color:#fff;
+    margin-left:0.1rem;
+    animation:blink 0.1s alternate-reverse;
+}
+
+.typing
+{
+    animation:none;
+}
+
+@keyframes blink 
+{
+    50%{opacity: 0;}
+}

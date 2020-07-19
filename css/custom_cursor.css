@@ -1,0 +1,49 @@
+.cursor,
+.cursor2 {
+  position: fixed;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  left: -100px;
+  top: 50%;
+}
+
+.cursor {
+  background-color: #FF8130;
+  height: 5px;
+  width: 5px;
+  z-index: 999;
+}
+
+.cursor2 {
+  z-index: 999;
+  transition: all 0.3s ease-out;
+  height: 35px;
+  width: 35px;
+  border: 1px solid #31f7ff;
+  opacity: 1;
+}
+
+.cursor2.dynamic_hover_class {
+  transform: scale(2) translate(-25%, -25%);
+  border: none;
+  mix-blend-mode: difference;
+  background-color: rgba(49, 248, 255, 0.5);
+}
+
+.cursor2.static_hover_class{
+  border: none;
+  mix-blend-mode:difference;
+  background-color: rgba(255, 255, 255, 0.897);
+}
+
+
+
+
+/********************************* Small Tablet Responsive *************************/
+@media screen and (max-width: 900px) {
+  .cursor,
+  .cursor2 {
+  display: none;
+  }
+}
