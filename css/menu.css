@@ -1,0 +1,217 @@
+@font-face {
+  font-family: Mayank_menu;
+  src: url(/Type_faces/Orbitron-VariableFont_wght.ttf);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  padding: 0px 20px;
+}
+
+.logo {
+  position: fixed;
+  z-index: 999;
+  top: 22px;
+  left: 20px;
+  width: 120px;
+  height: 25px;
+}
+
+.menu_bar {
+  position: fixed;
+  padding-top: 20px;
+  z-index: 999;
+  left: 100vw;
+  transform: translate(-250%, 30%);
+  width: 40px;
+  height: 30px;
+}
+
+.bar {
+  height: 2px;
+  width: 100%;
+  background-color: #fff;
+  display: block;
+  border-radius: 5px;
+  transition: all 300ms ease-in-out;
+}
+
+#bar1 {
+  margin: auto 0 auto auto;
+  width: 90%;
+  transform: translateY(-4px);
+}
+#bar2 {
+  margin: auto 0 auto auto;
+  width: 80%;
+}
+#bar3 {
+  transform: translateY(4px);
+}
+
+.menu_list {
+  position: fixed;
+  z-index: 998;
+  top: -100vh;
+  display: flex;
+  padding: 0;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+  opacity: 0;
+  transition: all 1s ease-in-out;
+}
+
+.menu_list.change {
+  padding: 70px;
+  top: 0;
+  opacity: 1;
+  display: flex;
+}
+
+.button {
+  width: 300px;
+  height: 80px;
+  position: relative;
+  border-left: 1px solid transparent;
+  margin-bottom: 10px;
+  transition: 0.5s;
+}
+
+.button:hover {
+  border-left: 1px solid black;
+}
+
+.button a{
+  cursor: none;
+}
+
+svg {
+  font-family: "Mayank_menu", sans-serif;
+  position: absolute;
+  top: 0;
+  left: 0;
+  stroke: black;
+  fill: #000;
+  stroke-width: 1.5;
+  stroke-dasharray: 250;
+  stroke-dashoffset: -250;
+  font-size: 50px;
+  transition: stroke-dashoffset 0.9s ease-in-out, fill 1s;
+}
+
+.button:hover svg {
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 0.6s ease-in-out, fill 0.6s;
+  fill: transparent;
+}
+
+.menu_bg {
+  position: fixed;
+  z-index: 997;
+  top: 0;
+  left: 0;
+  border-radius: 0% 0% 50% 50%;
+  background-color: white;
+  height: 0vh;
+  width: 100vw;
+  transition: all 1s ease-in-out;
+}
+
+.menu_bg.change-bg {
+  border-radius: 0%;
+  height: 100vh;
+}
+
+.change .bar {
+  background-color: white;
+}
+.change #bar1 {
+  background-color: #000;
+  width: 100%;
+  transform: translateY(5px) rotateZ(45deg);
+}
+.change #bar3 {
+  background-color: #000;
+  transform: translateY(1px) rotateZ(-45deg);
+}
+.change #bar2 {
+  opacity: 0;
+}
+
+/********************************* Big Tablet Responsive *************************/
+@media screen and (max-width: 1095px) {
+  svg {
+    font-size: 45px;
+  }
+  
+  .menu_list,
+  .menu_list.change {
+    left: 5%;
+  }
+
+  .menu_bar {
+    transform: translate(-200%, 25%);
+  }
+}
+/********************************* Small Tablet Responsive *************************/
+@media screen and (max-width: 900px) {
+  svg {
+    font-size: 40px;
+  }
+  .button a{
+    cursor: pointer;
+  }
+  
+  .menu_list,
+  .menu_list.change {
+    left: 8%;
+  }
+
+  .menu_bar {
+    transform: translate(-210%, 80%);
+    width: 35px;
+    height: 25px;
+    padding-top: 10px;
+  }
+}
+/********************************* Mobile Responsive *************************/
+@media screen and (max-width: 676px) {
+  svg {
+    font-size: 30px;
+  }
+
+  .menu_list,
+  .menu_list.change {
+    left: 18%;
+  }
+
+  .logo {
+    top: 18px;
+    left: 20px;
+    width: 80px;
+    height: 18px;
+  }
+  
+  .menu_bar {
+    transform: translate(-210%, 60%);
+    width: 30px;
+    height: 25px;
+  }
+
+  .bar{
+    height: 1px;
+    border-radius: 10px;
+  }
+
+  .change #bar3 {
+    transform: translateY(2px) rotateZ(-45deg);
+  }
+
+
+}
